@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пополнение баланса</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background: #ffffff;
+            color: #000000;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px 0;
+        }
+
+        .header h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #8774e1;
+        }
+
+        .header p {
+            color: #707579;
+            font-size: 16px;
+        }
+
+        .payment-methods {
+            display: grid;
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+
+        .payment-btn {
+            background: #ffffff;
+            border: 1px solid #e3e3e3;
+            border-radius: 12px;
+            padding: 16px;
+            color: #000000;
+            text-align: left;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 16px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        .payment-btn:hover {
+            background: #f5f5f5;
+            border-color: #8774e1;
+        }
+
+        .payment-btn .icon {
+            font-size: 24px;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f5f5f5;
+            border-radius: 10px;
+            color: #8774e1;
+        }
+
+        .promo-section {
+            background: #ffffff;
+            border: 1px solid #e3e3e3;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        .promo-section h3 {
+            color: #8774e1;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .promo-input {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #e3e3e3;
+            background: #f5f5f5;
+            color: #000000;
+            font-size: 16px;
+            transition: all 0.2s ease;
+        }
+
+        .promo-input:focus {
+            outline: none;
+            border-color: #8774e1;
+            background: #ffffff;
+        }
+
+        .card-details {
+            display: none;
+            background: #ffffff;
+            border: 1px solid #e3e3e3;
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 20px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        .card-details h3 {
+            color: #8774e1;
+            margin-bottom: 15px;
+        }
+
+        .card-number {
+            font-size: 18px;
+            font-weight: 500;
+            margin: 15px 0;
+            padding: 12px;
+            background: #f5f5f5;
+            border-radius: 8px;
+            text-align: center;
+            color: #8774e1;
+            letter-spacing: 1px;
+        }
+
+        .support-link {
+            display: block;
+            text-align: center;
+            color: #8774e1;
+            text-decoration: none;
+            margin-top: 20px;
+            padding: 12px;
+            background: #f5f5f5;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .support-link:hover {
+            background: #8774e1;
+            color: #ffffff;
+        }
+
+        .info-text {
+            color: #707579;
+            font-size: 14px;
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>💰 Пополнение баланса</h1>
+            <p>Выберите удобный способ оплаты</p>
+        </div>
+
+        <div class="payment-methods">
+            <div class="payment-btn" onclick="showCardDetails()">
+                <span class="icon">💳</span>
+                Банковская карта
+            </div>
+            <div class="payment-btn">
+                <span class="icon">🏦</span>
+                QIWI кошелек
+            </div>
+            <div class="payment-btn">
+                <span class="icon">₿</span>
+                Bitcoin
+            </div>
+            <div class="payment-btn">
+                <span class="icon">💬</span>
+                Техническая поддержка
+            </div>
+        </div>
+
+        <div class="promo-section">
+            <h3><span class="icon">🎁</span> Промокод</h3>
+            <input type="text" class="promo-input" placeholder="Введите промокод">
+        </div>
+
+        <div class="card-details" id="cardDetails">
+            <h3>Реквизиты для оплаты</h3>
+            <div class="card-number">4276 5500 1234 5678</div>
+            <p class="info-text">После оплаты отправьте скриншот в техническую поддержку</p>
+            <a href="https://t.me/SupportTeam" class="support-link" target="_blank">
+                💬 Перейти в поддержку
+            </a>
+        </div>
+    </div>
+
+    <script>
+        function showCardDetails() {
+            document.getElementById('cardDetails').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
